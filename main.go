@@ -57,7 +57,7 @@ func LoadConfigs(root string,verbose bool,tfversion bool) ( err error) {
 			dir := filepath.Base(parent)
 			
 			if strings.Contains(file, "main.tf") {
-				fmt.Println("------------------------------------------------------")
+				fmt.Println("---------------------------------------------------------")
 				//Print current project
 				color.Green(dir)
 				if verbose {
