@@ -19,7 +19,7 @@ func main() {
 	Title.Print()
 
 	FilePath := flag.String("d", "/var/foo", "Base project directory")
-	Verbose := flag.Bool("v", false, "Display each hibernate file location inside the table -default:false")
+	Verbose := flag.Bool("v", false, "Display each configuration absolute path -default:false")
 	Tfversion := flag.Bool("tf", false, "Search .terraform-version and versions.tf file in project -default:false")
 	flag.Parse()
 
@@ -42,14 +42,8 @@ func LoadConfigs(root string,verbose bool,tfversion bool) ( err error) {
 	files, _ := WalkMatch(root, "*.tf")
 	for _, file := range files {
 
-
-
 		//ignore /.terraform/ directory
 		if !strings.Contains(file, "/.terraform/"){
-
-
-
-
 
 			//full path
 			parent := filepath.Dir(file)
@@ -74,10 +68,8 @@ func LoadConfigs(root string,verbose bool,tfversion bool) ( err error) {
 						}
 						fmt.Println(".terraform-version " , string(FileContent))
 					  }
-
 	
 				}
-
 
 				cmd := exec.Command("terraform", "--version")
 				cmd.Dir = parent
