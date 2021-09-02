@@ -1,12 +1,28 @@
 # tf-version-reviewer
-Check Terraform version recursively in multiple directories  
+
+Check Terraform version across recursive directories
+
+  
 
 # Install
 
+  
+
 `$ go get`
+
+`$ go build`
+
+  
+
 # Usage
 
-Usage arguments:    
-  `-d`  Base project directory containing multiple terraform configurations
-  `-u`	Display each class usage across the project -default:false   
-  `-v`	Display each hibernate file location inside the table -default:false  
+  `$ ./tfversion`
+  
+
+Usage arguments:
+
+`-d`  Base project directory  that contains all terraform configurations
+
+`-tf` Search .terraform-version and versions.tf file in project -default:false
+
+`-v`  Display each configuration absolute path -default:false
